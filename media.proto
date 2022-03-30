@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+enum MediaType {
+    UNKNOWN = 0;
+    MOVIE = 1;
+    TVSHOW = 2;
+    GAME = 3;
+    NOVEL = 4;
+    COMIC = 5;
+}
+
+message Catalogue {
+    repeated Media medias = 1;
+}
+
+message Media {
+    int32 rating = 1;
+    string name = 2;
+    MediaType type = 3;
+    google.protobuf.Timestamp date_finished = 4;
+}
