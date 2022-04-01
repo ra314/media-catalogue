@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0bmedia.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"#\n\tCatalogue\x12\x16\n\x06medias\x18\x01 \x03(\x0b\x32\x06.Media\"r\n\x05Media\x12\x0e\n\x06rating\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x18\n\x04type\x18\x03 \x01(\x0e\x32\n.MediaType\x12\x31\n\rdate_finished\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp*O\n\tMediaType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05MOVIE\x10\x01\x12\n\n\x06TVSHOW\x10\x02\x12\x08\n\x04GAME\x10\x03\x12\t\n\x05NOVEL\x10\x04\x12\t\n\x05\x43OMIC\x10\x05\x62\x06proto3'
+  serialized_pb=b'\n\x0bmedia.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"#\n\tCatalogue\x12\x16\n\x06medias\x18\x01 \x03(\x0b\x32\x06.Media\"\x8f\x01\n\x05Media\x12+\n\x06rating\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x18\n\x04type\x18\x03 \x01(\x0e\x32\n.MediaType\x12\x31\n\rdate_finished\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp*O\n\tMediaType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05MOVIE\x10\x01\x12\n\n\x06TVSHOW\x10\x02\x12\x08\n\x04GAME\x10\x03\x12\t\n\x05NOVEL\x10\x04\x12\t\n\x05\x43OMIC\x10\x05\x62\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
 _MEDIATYPE = _descriptor.EnumDescriptor(
   name='MediaType',
@@ -65,8 +66,8 @@ _MEDIATYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=201,
-  serialized_end=280,
+  serialized_start=263,
+  serialized_end=342,
 )
 _sym_db.RegisterEnumDescriptor(_MEDIATYPE)
 
@@ -107,8 +108,8 @@ _CATALOGUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=48,
-  serialized_end=83,
+  serialized_start=80,
+  serialized_end=115,
 )
 
 
@@ -122,8 +123,8 @@ _MEDIA = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='rating', full_name='Media.rating', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -160,11 +161,12 @@ _MEDIA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=85,
-  serialized_end=199,
+  serialized_start=118,
+  serialized_end=261,
 )
 
 _CATALOGUE.fields_by_name['medias'].message_type = _MEDIA
+_MEDIA.fields_by_name['rating'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT32VALUE
 _MEDIA.fields_by_name['type'].enum_type = _MEDIATYPE
 _MEDIA.fields_by_name['date_finished'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['Catalogue'] = _CATALOGUE

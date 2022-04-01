@@ -1,4 +1,4 @@
-#Defining the media Class
+# Defining the media Class
 class media:	
 	def __init__(self, name, media_type, rating, date_finished):
 		self.name = name
